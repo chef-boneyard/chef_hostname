@@ -1,5 +1,14 @@
 # Change Log
 
+## [Unreleased](https://github.com/lamont-cookbooks/chef_hostname/tree/HEAD)
+
+[Full Changelog](https://github.com/lamont-cookbooks/chef_hostname/compare/v0.4.0...HEAD)
+
+**Merged pull requests:**
+
+- add a couple more supported platforms [\#14](https://github.com/lamont-cookbooks/chef_hostname/pull/14) ([lamont-granquist](https://github.com/lamont-granquist))
+- Add supported platforms from README to metadata [\#13](https://github.com/lamont-cookbooks/chef_hostname/pull/13) ([robbkidd](https://github.com/robbkidd))
+
 ## [v0.4.0](https://github.com/lamont-cookbooks/chef_hostname/tree/v0.4.0) (2016-03-22)
 [Full Changelog](https://github.com/lamont-cookbooks/chef_hostname/compare/v0.3.1...v0.4.0)
 
