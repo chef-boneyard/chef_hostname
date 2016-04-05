@@ -12,7 +12,7 @@ depends "compat_resource"
 
 chef_version "~> 12.1" if respond_to?(:chef_version)
 
-%w{redhat centos scientific oracle fedora ubuntu debian suse freebsd mac_os_x
+%w{redhat centos scientific oracle fedora ubuntu debian linuxmint suse opensuse freebsd netbsd mac_os_x
    solaris gentoo arch nexus}.each do |platform|
   supports platform
 end
