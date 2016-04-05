@@ -134,6 +134,9 @@ Docker container hostnames do not persist after restarts due to limitations of d
 ## TODO
 - fix setting node['fqdn'] correctly on windows
 - aix
+- xenserver (probably already supported via RHEL)
+- test:  exherbo, alpine, slackware, rapsbian, pidora
+- smartos, omnios, openindiana, opensolaris, nexentacore?
 
 ## License & Authors
 
