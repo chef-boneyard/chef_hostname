@@ -11,3 +11,8 @@ issues_url       "https://github.com/lamont-cookbooks/chef_hostname/issues" if r
 depends "compat_resource"
 
 chef_version "~> 12.1" if respond_to?(:chef_version)
+
+%w{redhat centos scientific oracle fedora ubuntu debian suse freebsd mac_os_x
+   solaris gentoo arch nexus}.each do |platform|
+  supports platform
+end
