@@ -89,7 +89,7 @@ action :set do
         # the "platform: nexus, platform_family: wrlinux, os: linux" platform also hits this
         # this is also fallback for any linux systemd host in a docker container (where /usr/bin/hostnamectl will fail)
         file "/etc/hostname" do
-          atomic_update false
+          atomic_update false if docker_guest?
           content "#{new_resource.hostname}\n"
           owner "root"
           group node["root_group"]
