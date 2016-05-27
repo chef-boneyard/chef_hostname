@@ -97,7 +97,7 @@ action :set do
         end
       when ::File.exist?("/etc/sysconfig/network")
         # older non-systemd RHEL/Fedora derived
-        append_replacing_matching_lines("/etc/sysconfig/network", /^HOSTNAME\s+=/, "HOSTNAME=#{new_resource.hostname}")
+        append_replacing_matching_lines("/etc/sysconfig/network", /^HOSTNAME\s*=/, "HOSTNAME=#{new_resource.hostname}")
       when ::File.exist?("/etc/HOSTNAME")
         # SuSE/OpenSUSE uses /etc/HOSTNAME
         file "/etc/HOSTNAME" do
