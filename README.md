@@ -56,6 +56,15 @@ hostname Sets the hostname, ensures that reboot will preserve the hostname, re-r
 - hostname: hostname to set
 - compile_time:  defaults to running at compile time, set to false to disable
 
+### Chefspec / Testing
+
+The action to be used in Chefspec/tests is "set" for exmaple:
+```ruby
+      it 'checks if hostname is being set' do
+        expect(chef_run).to set_hostname('your.hostname.com')
+      end
+```
+
 ## Examples
 
 Setting hostname to a string:
