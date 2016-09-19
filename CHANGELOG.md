@@ -1,58 +1,68 @@
 # Change Log
 
-## [Unreleased](https://github.com/lamont-cookbooks/chef_hostname/tree/HEAD)
+## [Unreleased](https://github.com/chef-cookbooks/chef_hostname/tree/HEAD)
 
-[Full Changelog](https://github.com/lamont-cookbooks/chef_hostname/compare/v0.4.0...HEAD)
-
-**Merged pull requests:**
-
-- add a couple more supported platforms [\#14](https://github.com/lamont-cookbooks/chef_hostname/pull/14) ([lamont-granquist](https://github.com/lamont-granquist))
-- Add supported platforms from README to metadata [\#13](https://github.com/lamont-cookbooks/chef_hostname/pull/13) ([robbkidd](https://github.com/robbkidd))
-
-## [v0.4.0](https://github.com/lamont-cookbooks/chef_hostname/tree/v0.4.0) (2016-03-22)
-[Full Changelog](https://github.com/lamont-cookbooks/chef_hostname/compare/v0.3.1...v0.4.0)
+[Full Changelog](https://github.com/chef-cookbooks/chef_hostname/compare/v0.4.1...HEAD)
 
 **Merged pull requests:**
 
-- Support Solaris 11 via svccfg [\#12](https://github.com/lamont-cookbooks/chef_hostname/pull/12) ([lamont-granquist](https://github.com/lamont-granquist))
+- fix new chefstyle offsenses [\#19](https://github.com/chef-cookbooks/chef_hostname/pull/19) ([lamont-granquist](https://github.com/lamont-granquist))
+- Chef spec matchers [\#18](https://github.com/chef-cookbooks/chef_hostname/pull/18) ([shinitiandrei](https://github.com/shinitiandrei))
+- Fix duplicate HOSTNAME= on centos 6 [\#17](https://github.com/chef-cookbooks/chef_hostname/pull/17) ([justyns](https://github.com/justyns))
+- only unset atomic\_updates on a docker guest [\#15](https://github.com/chef-cookbooks/chef_hostname/pull/15) ([lamont-granquist](https://github.com/lamont-granquist))
 
-## [v0.3.1](https://github.com/lamont-cookbooks/chef_hostname/tree/v0.3.1) (2016-03-21)
-[Full Changelog](https://github.com/lamont-cookbooks/chef_hostname/compare/v0.3.0...v0.3.1)
-
-**Merged pull requests:**
-
-- Add Gentoo support [\#10](https://github.com/lamont-cookbooks/chef_hostname/pull/10) ([lamont-granquist](https://github.com/lamont-granquist))
-- Initial work on Solaris 10 [\#9](https://github.com/lamont-cookbooks/chef_hostname/pull/9) ([lamont-granquist](https://github.com/lamont-granquist))
-- Duck type BSD systems better [\#8](https://github.com/lamont-cookbooks/chef_hostname/pull/8) ([lamont-granquist](https://github.com/lamont-granquist))
-- more targetted about atomic updates [\#7](https://github.com/lamont-cookbooks/chef_hostname/pull/7) ([lamont-granquist](https://github.com/lamont-granquist))
-
-## [v0.3.0](https://github.com/lamont-cookbooks/chef_hostname/tree/v0.3.0) (2016-03-11)
-[Full Changelog](https://github.com/lamont-cookbooks/chef_hostname/compare/v0.2.0...v0.3.0)
+## [v0.4.1](https://github.com/chef-cookbooks/chef_hostname/tree/v0.4.1) (2016-04-05)
+[Full Changelog](https://github.com/chef-cookbooks/chef_hostname/compare/v0.4.0...v0.4.1)
 
 **Merged pull requests:**
 
-- Fix fedora exit 1 from hostnamectl [\#6](https://github.com/lamont-cookbooks/chef_hostname/pull/6) ([lamont-granquist](https://github.com/lamont-granquist))
-- Mac support and Linux reorganization [\#5](https://github.com/lamont-cookbooks/chef_hostname/pull/5) ([lamont-granquist](https://github.com/lamont-granquist))
-- windows now parses, still fails to actually work [\#4](https://github.com/lamont-cookbooks/chef_hostname/pull/4) ([lamont-granquist](https://github.com/lamont-granquist))
+- add a couple more supported platforms [\#14](https://github.com/chef-cookbooks/chef_hostname/pull/14) ([lamont-granquist](https://github.com/lamont-granquist))
+- Add supported platforms from README to metadata [\#13](https://github.com/chef-cookbooks/chef_hostname/pull/13) ([robbkidd](https://github.com/robbkidd))
 
-## [v0.2.0](https://github.com/lamont-cookbooks/chef_hostname/tree/v0.2.0) (2016-03-11)
-[Full Changelog](https://github.com/lamont-cookbooks/chef_hostname/compare/v0.1.2...v0.2.0)
-
-**Merged pull requests:**
-
-- Fix for running in docker containers [\#3](https://github.com/lamont-cookbooks/chef_hostname/pull/3) ([lamont-granquist](https://github.com/lamont-granquist))
-
-## [v0.1.2](https://github.com/lamont-cookbooks/chef_hostname/tree/v0.1.2) (2016-03-11)
-[Full Changelog](https://github.com/lamont-cookbooks/chef_hostname/compare/v0.1.1...v0.1.2)
-
-## [v0.1.1](https://github.com/lamont-cookbooks/chef_hostname/tree/v0.1.1) (2016-03-11)
-[Full Changelog](https://github.com/lamont-cookbooks/chef_hostname/compare/v0.1.0...v0.1.1)
+## [v0.4.0](https://github.com/chef-cookbooks/chef_hostname/tree/v0.4.0) (2016-03-22)
+[Full Changelog](https://github.com/chef-cookbooks/chef_hostname/compare/v0.3.1...v0.4.0)
 
 **Merged pull requests:**
 
-- Fixed idempotency issues on Ubuntu/Systemd [\#2](https://github.com/lamont-cookbooks/chef_hostname/pull/2) ([lamont-granquist](https://github.com/lamont-granquist))
+- Support Solaris 11 via svccfg [\#12](https://github.com/chef-cookbooks/chef_hostname/pull/12) ([lamont-granquist](https://github.com/lamont-granquist))
 
-## [v0.1.0](https://github.com/lamont-cookbooks/chef_hostname/tree/v0.1.0) (2016-03-11)
+## [v0.3.1](https://github.com/chef-cookbooks/chef_hostname/tree/v0.3.1) (2016-03-21)
+[Full Changelog](https://github.com/chef-cookbooks/chef_hostname/compare/v0.3.0...v0.3.1)
+
+**Merged pull requests:**
+
+- Add Gentoo support [\#10](https://github.com/chef-cookbooks/chef_hostname/pull/10) ([lamont-granquist](https://github.com/lamont-granquist))
+- Initial work on Solaris 10 [\#9](https://github.com/chef-cookbooks/chef_hostname/pull/9) ([lamont-granquist](https://github.com/lamont-granquist))
+- Duck type BSD systems better [\#8](https://github.com/chef-cookbooks/chef_hostname/pull/8) ([lamont-granquist](https://github.com/lamont-granquist))
+- more targetted about atomic updates [\#7](https://github.com/chef-cookbooks/chef_hostname/pull/7) ([lamont-granquist](https://github.com/lamont-granquist))
+
+## [v0.3.0](https://github.com/chef-cookbooks/chef_hostname/tree/v0.3.0) (2016-03-11)
+[Full Changelog](https://github.com/chef-cookbooks/chef_hostname/compare/v0.2.0...v0.3.0)
+
+**Merged pull requests:**
+
+- Fix fedora exit 1 from hostnamectl [\#6](https://github.com/chef-cookbooks/chef_hostname/pull/6) ([lamont-granquist](https://github.com/lamont-granquist))
+- Mac support and Linux reorganization [\#5](https://github.com/chef-cookbooks/chef_hostname/pull/5) ([lamont-granquist](https://github.com/lamont-granquist))
+- windows now parses, still fails to actually work [\#4](https://github.com/chef-cookbooks/chef_hostname/pull/4) ([lamont-granquist](https://github.com/lamont-granquist))
+
+## [v0.2.0](https://github.com/chef-cookbooks/chef_hostname/tree/v0.2.0) (2016-03-11)
+[Full Changelog](https://github.com/chef-cookbooks/chef_hostname/compare/v0.1.2...v0.2.0)
+
+**Merged pull requests:**
+
+- Fix for running in docker containers [\#3](https://github.com/chef-cookbooks/chef_hostname/pull/3) ([lamont-granquist](https://github.com/lamont-granquist))
+
+## [v0.1.2](https://github.com/chef-cookbooks/chef_hostname/tree/v0.1.2) (2016-03-11)
+[Full Changelog](https://github.com/chef-cookbooks/chef_hostname/compare/v0.1.1...v0.1.2)
+
+## [v0.1.1](https://github.com/chef-cookbooks/chef_hostname/tree/v0.1.1) (2016-03-11)
+[Full Changelog](https://github.com/chef-cookbooks/chef_hostname/compare/v0.1.0...v0.1.1)
+
+**Merged pull requests:**
+
+- Fixed idempotency issues on Ubuntu/Systemd [\#2](https://github.com/chef-cookbooks/chef_hostname/pull/2) ([lamont-granquist](https://github.com/lamont-granquist))
+
+## [v0.1.0](https://github.com/chef-cookbooks/chef_hostname/tree/v0.1.0) (2016-03-11)
 
 
 \* *This Change Log was automatically generated by [github_changelog_generator](https://github.com/skywinder/Github-Changelog-Generator)*
