@@ -3,7 +3,7 @@ require "chefstyle"
 require "rubocop/rake_task"
 require "foodcritic"
 require "kitchen"
-require 'github_changelog_generator/task'
+require "github_changelog_generator/task"
 
 require_relative "tasks/maintainers"
 

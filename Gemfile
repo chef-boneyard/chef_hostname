@@ -29,12 +29,12 @@ group :kitchen_docker do
 end
 
 group :kitchen_cloud do
-  gem 'kitchen-digitalocean'
-  gem 'kitchen-ec2'
-  gem 'kitchen-azurerm'
+  gem "kitchen-digitalocean"
+  gem "kitchen-ec2"
+  gem "kitchen-azurerm"
 end
 
 group :development do
-  gem 'winrm-fs', '~> 0.3'
-  gem 'stove'
+  gem "winrm-fs", "~> 0.3"
+  gem "stove"
 end

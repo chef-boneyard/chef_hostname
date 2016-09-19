@@ -73,7 +73,7 @@ action :set do
         not_if { shell_out!("/usr/sbin/scutil --get LocalHostName").stdout.chomp == shortname }
         notifies :reload, "ohai[reload hostname]"
       end
-    when node['os'] == "linux"
+    when node["os"] == "linux"
       case
       when ::File.exist?("/usr/bin/hostnamectl") && !docker_guest?
         # use hostnamectl whenever we find it on linux (as systemd takes over the world)
@@ -149,8 +149,8 @@ action :set do
     when ::File.exist?("/usr/sbin/svccfg")
       # Solaris >= 5.11 systems using svccfg (must come after /etc/nodename handling)
       execute "svccfg -s system/identity:node setprop config/nodename=\'#{new_resource.hostname}\'" do
-        notifies :run, 'execute[svcadm refresh]', :immediately
-        notifies :run, 'execute[svcadm restart]', :immediately
+        notifies :run, "execute[svcadm refresh]", :immediately
+        notifies :run, "execute[svcadm restart]", :immediately
         not_if { shell_out!("svccfg -s system/identity:node listprop config/nodename").stdout.chomp =~ /config\/nodename\s+astring\s+#{new_resource.hostname}/ }
       end
       execute "svcadm refresh" do
