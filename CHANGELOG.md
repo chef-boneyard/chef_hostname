@@ -1,8 +1,7 @@
 # Change Log
 
-## [Unreleased](https://github.com/chef-cookbooks/chef_hostname/tree/HEAD)
-
-[Full Changelog](https://github.com/chef-cookbooks/chef_hostname/compare/v0.4.1...HEAD)
+## [v0.4.2](https://github.com/chef-cookbooks/chef_hostname/tree/v0.4.2) (2016-09-19)
+[Full Changelog](https://github.com/chef-cookbooks/chef_hostname/compare/v0.4.1...v0.4.2)
 
 **Merged pull requests:**
 
