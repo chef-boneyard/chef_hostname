@@ -179,7 +179,7 @@ action :set do
     powershell_script "set hostname" do
       code <<-EOH
         $sysInfo = Get-WmiObject -Class Win32_ComputerSystem
-        $sysInfo.Rename(#{new_resource.hostname})
+        $sysInfo.Rename("#{new_resource.hostname}")
       EOH
       not_if { Socket.gethostbyname(Socket.gethostname).first == new_resource.hostname }
     end
