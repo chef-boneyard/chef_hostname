@@ -5,8 +5,8 @@ license          "Apache 2.0"
 description      "Configures the hostname on a node"
 long_description IO.read(File.join(File.dirname(__FILE__), "README.md"))
 version          "0.4.2"
-source_url       "https://github.com/lamont-cookbooks/chef_hostname" if respond_to?(:source_url)
-issues_url       "https://github.com/lamont-cookbooks/chef_hostname/issues" if respond_to?(:issues_url)
+source_url       "https://github.com/lamont-cookbooks/chef_hostname"
+issues_url       "https://github.com/lamont-cookbooks/chef_hostname/issues"
 
 depends "compat_resource"
 

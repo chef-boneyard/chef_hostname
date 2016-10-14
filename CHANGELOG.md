@@ -1,4 +1,7 @@
-# Change Log
+# chef_hostname Cookbook CHANGELOG
+
+This file is used to list changes made in each version of the chef_hostname cookbook.
+
 
 ## [v0.4.2](https://github.com/chef-cookbooks/chef_hostname/tree/v0.4.2) (2016-09-19)
 [Full Changelog](https://github.com/chef-cookbooks/chef_hostname/compare/v0.4.1...v0.4.2)
