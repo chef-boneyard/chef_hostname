@@ -8,7 +8,7 @@ version          "0.4.2"
 source_url       "https://github.com/lamont-cookbooks/chef_hostname"
 issues_url       "https://github.com/lamont-cookbooks/chef_hostname/issues"
 
-depends "compat_resource"
+depends "compat_resource", ">= 12.14.7"
 
 chef_version "~> 12.1" if respond_to?(:chef_version)
 
