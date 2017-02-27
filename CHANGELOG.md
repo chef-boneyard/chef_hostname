@@ -1,8 +1,8 @@
 # Change Log
 
-## [5.0.0](https://github.com/chef-cookbooks/chef_hostname/tree/5.0.0) (2017-02-27)
+## [0.5.0](https://github.com/chef-cookbooks/chef_hostname/tree/0.5.0) (2017-02-27)
 
-[Full Changelog](https://github.com/chef-cookbooks/chef_hostname/compare/v0.4.2...5.0.0)
+[Full Changelog](https://github.com/chef-cookbooks/chef_hostname/compare/v0.4.2...0.5.0)
 
 **Closed issues:**
 
