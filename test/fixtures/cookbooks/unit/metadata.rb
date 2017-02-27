@@ -7,4 +7,3 @@ long_description "Installs/Configures unit"
 version "0.1.0"
 
 depends "chef_hostname"
-depends "compat_resource"

@@ -2,25 +2,26 @@
 
 Sets the node's hostname
 
-* resource-driven cookbook
-* supports FQDNs as hostnames
-* persists after a reboot
-* reloads ohai
-* runs at compile-time (no need to use lazy)
-* fixes up /etc/hosts so node["fqdn"] works
-* runs nearly everywhere
-* supports hostnamectl from systemd
-* not tied to any other sysctl/etc-hosts cookbook dependecies
+- resource-driven cookbook
+- supports FQDNs as hostnames
+- persists after a reboot
+- reloads ohai
+- runs at compile-time (no need to use lazy)
+- fixes up /etc/hosts so node["fqdn"] works
+- runs nearly everywhere
+- supports hostnamectl from systemd
+- not tied to any other sysctl/etc-hosts cookbook dependecies
 
 ## Motivation
 
-* Make strong guarantees that `node["fqdn"]` in other recipes "just works"
-* No need to `lazy { node["fqdn"] }`
-* Be very portable
+- Make strong guarantees that `node["fqdn"]` in other recipes "just works"
+- No need to `lazy { node["fqdn"] }`
+- Be very portable
 
 ## Requirements
 
 ## Platforms
+
 - Ubuntu/Debian (and derivatives like Mint/Raspbian)
 - RHEL/CentOS/Scientific/Oracle/Fedora (and derivatives like Pidora)
 - OpenSUSE/SLES
@@ -33,15 +34,15 @@ Sets the node's hostname
 - Cisco Nexus
 - Windows <-- currently a bit of a lie
 
-Because of the way that this cookbook "Duck Types" the operating system, many systems that are not listed above
-have a decent chance of working out of the box provided that they implement a common pattern.
+Because of the way that this cookbook "Duck Types" the operating system, many systems that are not listed above have a decent chance of working out of the box provided that they implement a common pattern.
 
 ### Chef
-- Chef 12.1+
+
+- Chef 12.5+
 
 ### Cookbooks
-- compat_resource
 
+- none
 
 ## Custom Resources
 
@@ -54,11 +55,12 @@ hostname Sets the hostname, ensures that reboot will preserve the hostname, re-r
 ### Properties
 
 - hostname: hostname to set
-- compile_time:  defaults to running at compile time, set to false to disable
+- compile_time: defaults to running at compile time, set to false to disable
 
 ### Chefspec / Testing
 
 The action to be used in Chefspec/tests is "set" for exmaple:
+
 ```ruby
       it 'checks if hostname is being set' do
         expect(chef_run).to set_hostname('your.hostname.com')
@@ -106,8 +108,7 @@ file "/etc/issue" do
 end
 ```
 
-The hostname resource will drop a line into /etc/hosts so that the `node["fqdn"]` can be resolved correctly, and will re-trigger ohai.  The default is
-to use the node["ipaddress"]` value for the ipaddress on the /etc/hosts line.  In order to override it:
+The hostname resource will drop a line into /etc/hosts so that the `node["fqdn"]` can be resolved correctly, and will re-trigger ohai. The default is to use the node["ipaddress"]` value for the ipaddress on the /etc/hosts line. In order to override it:
 
 ```ruby
 hostname node["cloud"]["public_hostname"]
@@ -115,8 +116,7 @@ hostname node["cloud"]["public_hostname"]
 end
 ```
 
-In order to override the editing of the /etc/hosts file pass nil for the ipaddress (note that if you edit the /etc/hosts file you will be responsible
-for also reloading the ohai plugin and you will want to do both at compile-time yourself in order for `node["fqdn"]` to resolve)
+In order to override the editing of the /etc/hosts file pass nil for the ipaddress (note that if you edit the /etc/hosts file you will be responsible for also reloading the ohai plugin and you will want to do both at compile-time yourself in order for `node["fqdn"]` to resolve)
 
 ```ruby
 hostname node.name
@@ -135,16 +135,16 @@ end
 
 ## Notes
 
-There are no recipes in this cookbook, the resource is meant to be used in your own custom recipes.  There are no attributes in this cookbook,
-you can drive the resource off of whatever attribute(s) you like.
+There are no recipes in this cookbook, the resource is meant to be used in your own custom recipes. There are no attributes in this cookbook, you can drive the resource off of whatever attribute(s) you like.
 
 Docker container hostnames do not persist after restarts due to limitations of docker.
 
 ## TODO
+
 - fix setting node['fqdn'] correctly on windows
 - aix
 - xenserver (probably already supported via RHEL)
-- test:  exherbo, alpine, slackware, rapsbian, pidora
+- test: exherbo, alpine, slackware, rapsbian, pidora
 - smartos, omnios, openindiana, opensolaris, nexentacore?
 
 ## License & Authors
