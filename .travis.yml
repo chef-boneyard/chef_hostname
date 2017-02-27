@@ -20,7 +20,7 @@ branches:
 before_script:
   - eval "$(/opt/chefdk/bin/chef shell-init bash)"
   - /opt/chefdk/embedded/bin/chef --version
-  - /opt/chefdk/embedded/bin/cookstyle --version
+  - /opt/chefdk/embedded/bin/gem install chefstyle
   - /opt/chefdk/embedded/bin/foodcritic --version
 
 script:
