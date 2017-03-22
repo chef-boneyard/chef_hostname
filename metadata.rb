@@ -8,7 +8,7 @@ version          "0.5.0"
 source_url       "https://github.com/lamont-cookbooks/chef_hostname"
 issues_url       "https://github.com/lamont-cookbooks/chef_hostname/issues"
 
-chef_version ">= 12.5" if respond_to?(:chef_version)
+chef_version     ">= 12.7" if respond_to?(:chef_version)
 
 %w{redhat centos scientific oracle fedora ubuntu debian linuxmint suse opensuse opensuseleap freebsd netbsd mac_os_x
    solaris gentoo arch nexus}.each do |platform|

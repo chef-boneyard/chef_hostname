@@ -9,7 +9,7 @@ property :windows_reboot, [ true, false ], default: true
 
 default_action :set
 
-action_class.class_eval do
+action_class do
   def append_replacing_matching_lines(path, regex, string)
     text = IO.read(path).split("\n")
     text.reject! { |s| s =~ regex }
