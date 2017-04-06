@@ -2,15 +2,14 @@
 # Cookbook Name:: chef_hostname
 # Spec:: default
 #
-# Copyright (c) 2016 The Authors, All Rights Reserved.
 
 require "spec_helper"
 
 describe "chef_hostname::default" do
-  context "When all attributes are default, on an unspecified platform" do
+  context "When running the default recipe in the unit testing cookbook" do
     let(:chef_run) do
-      runner = ChefSpec::ServerRunner.new
-      runner.converge(described_recipe)
+      runner = ChefSpec::ServerRunner.new(platform: "ubuntu", version: "16.04")
+      runner.converge("unit::default")
     end
 
     it "converges successfully" do
