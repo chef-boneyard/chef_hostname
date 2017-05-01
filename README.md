@@ -135,7 +135,7 @@ end
 
 ## Notes
 
-There are no recipes in this cookbook, the resource is meant to be used in your own custom recipes. There are no attributes in this cookbook, you can drive the resource off of whatever attribute(s) you like.
+The default recipe in this cookbook simply sets hostname to node.name as found in chef-server, the resource is meant to be used in your own custom recipes. There are no attributes in this cookbook, you can drive the resource off of whatever attribute(s) you like.
 
 Docker container hostnames do not persist after restarts due to limitations of docker.
 
