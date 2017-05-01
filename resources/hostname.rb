@@ -74,6 +74,9 @@ action :set do
         notifies :reload, "ohai[reload hostname]"
       end
     when node["os"] == "linux"
+      if ::File.exist?("/etc/cloud/cloud.cfg")
+        append_replacing_matching_lines("/etc/cloud/cloud.cfg", /^preserve_hostname:/, "preserve_hostname: true")
+      end
       case
       when ::File.exist?("/usr/bin/hostnamectl") && !docker_guest?
         # use hostnamectl whenever we find it on linux (as systemd takes over the world)
