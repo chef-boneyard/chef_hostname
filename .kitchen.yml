@@ -25,6 +25,9 @@ platforms:
   - name: windows-2012r2
     driver_config:
       box: chef/windows-server-2012r2-standard
+  - name: amazon-linux
+    driver_config:
+      box: mvbcoding/awslinux
 
 suites:
   # this tests basic functionality
