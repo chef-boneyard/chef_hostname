@@ -27,7 +27,7 @@ Sets the node's hostname
 - OpenSUSE/SLES
 - FreeBSD/OpenBSD/NetBSD
 - Docker Containers
-- MacOSX
+- MacOS
 - Solaris
 - Gentoo
 - Arch
