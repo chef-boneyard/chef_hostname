@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of the chef_hostname cookbook.
 
+## 0.6.0 (2017-05-30)
+
+- Added testing in Travis with Delivery local mode
+- Require Chef 12.7+ in order to be Chef 13 compatible
+- Use a SPDX standard license string
 
 ## [0.5.0](https://github.com/chef-cookbooks/chef_hostname/tree/0.5.0) (2017-02-27)
 
