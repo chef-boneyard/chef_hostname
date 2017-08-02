@@ -4,4 +4,4 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
-my_resource "foobar.example.com"
+my_resource 'foobar.example.com'
