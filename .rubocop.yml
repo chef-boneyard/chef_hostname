@@ -1,0 +1,8 @@
+Metrics/BlockNesting:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/AccessorMethodName:
+  Enabled: false
