@@ -172,6 +172,7 @@ action :set do
     ec2_config_xml = 'C:\Program Files\Amazon\Ec2ConfigService\Settings\config.xml'
     cookbook_file ec2_config_xml do
       source "config.xml"
+      cookbook "chef_hostname"
       only_if { ::File.exist? ec2_config_xml }
     end
 
