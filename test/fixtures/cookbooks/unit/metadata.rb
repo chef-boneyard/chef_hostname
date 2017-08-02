@@ -1,5 +1,5 @@
-name "unit"
-license "Apache-2.0"
-version "0.1.0"
+name 'unit'
+license 'Apache-2.0'
+version '0.1.0'
 
-depends "chef_hostname"
+depends 'chef_hostname'

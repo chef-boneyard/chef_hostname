@@ -4,5 +4,5 @@ resource_name :my_resource
 default_action :doit
 
 action :doit do
-  hostname "foobar.example.com"
+  hostname 'foobar.example.com'
 end
