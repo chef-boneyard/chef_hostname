@@ -37,7 +37,7 @@ describe 'unit::render' do
   end
 
   # REDHAT 5/6
-  describe file('\($1\)network'), if: os[:family] == 'redhat' && os[:release].to_f < 7 do
+  describe file('/etc/sysconfig/network'), if: os[:family] == 'redhat' && os[:release].to_f < 7 do
     its(:content) { should match(/^HOSTNAME=foobar.example.com$/) }
   end
 
