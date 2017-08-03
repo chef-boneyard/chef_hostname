@@ -181,13 +181,14 @@ action :set do
         $sysInfo = Get-WmiObject -Class Win32_ComputerSystem
         $sysInfo.Rename("#{new_resource.hostname}")
       EOH
+      notifies :request_reboot, 'reboot[setting hostname]'
       not_if { Socket.gethostbyname(Socket.gethostname).first == new_resource.hostname }
     end
 
     # reboot because $windows
     reboot "setting hostname" do
       reason "chef setting hostname"
-      action :request_reboot
+      action :nothing
       only_if { new_resource.windows_reboot }
     end
   end
