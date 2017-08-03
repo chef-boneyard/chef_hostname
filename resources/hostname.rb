@@ -182,7 +182,7 @@ action :set do
         $sysInfo = Get-WmiObject -Class Win32_ComputerSystem
         $sysInfo.Rename("#{new_resource.hostname}")
       EOH
-      notifies :request_reboot, 'reboot[setting hostname]'
+      notifies :request_reboot, "reboot[setting hostname]"
       not_if { Socket.gethostbyname(Socket.gethostname).first == new_resource.hostname }
     end
 
@@ -199,7 +199,7 @@ end
 def after_created
   if compile_time
     Array(action).each do |action|
-      self.run_action(action)
+      run_action(action)
     end
   end
 end
