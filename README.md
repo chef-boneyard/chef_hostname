@@ -111,7 +111,7 @@ end
 The hostname resource will drop a line into /etc/hosts so that the `node["fqdn"]` can be resolved correctly, and will re-trigger ohai. The default is to use the node["ipaddress"]` value for the ipaddress on the /etc/hosts line. In order to override it:
 
 ```ruby
-hostname node["cloud"]["public_hostname"]
+hostname node["cloud"]["public_hostname"] do
   ipaddress node["cloud"]["public_ipv4"]
 end
 ```
@@ -119,7 +119,7 @@ end
 In order to override the editing of the /etc/hosts file pass nil for the ipaddress (note that if you edit the /etc/hosts file you will be responsible for also reloading the ohai plugin and you will want to do both at compile-time yourself in order for `node["fqdn"]` to resolve)
 
 ```ruby
-hostname node.name
+hostname node.name do
   ipaddress nil
 end
 ```
@@ -127,7 +127,7 @@ end
 Aliases can also be added to the line that hostname adds to /etc/hosts:
 
 ```ruby
-hostname node.name
+hostname node.name do
   ipaddress "259.1.1.1"
   aliases [ "klowns.car.local", "yolo" ]
 end
