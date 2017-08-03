@@ -130,6 +130,7 @@ Aliases can also be added to the line that hostname adds to /etc/hosts:
 hostname node.name do
   ipaddress "259.1.1.1"
   aliases [ "klowns.car.local", "yolo" ]
+  not_if { foo == bar }
 end
 ```
 
