@@ -95,7 +95,7 @@ action :set do
           group node["root_group"]
           mode "0644"
         end
-      when ::File.exist?("/etc/sysconfig/network")
+      when ::File.file?("/etc/sysconfig/network")
         # older non-systemd RHEL/Fedora derived
         append_replacing_matching_lines("/etc/sysconfig/network", /^HOSTNAME\s*=/, "HOSTNAME=#{new_resource.hostname}")
       when ::File.exist?("/etc/HOSTNAME")
