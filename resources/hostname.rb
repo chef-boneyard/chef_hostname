@@ -22,11 +22,6 @@ action_class do
       not_if { IO.read(path).split("\n").include?(string) }
     end
   end
-
-  def docker_guest?
-    node["virtualization"] && node["virtualization"]["systems"] &&
-      node["virtualization"]["systems"]["docker"] && node["virtualization"]["systems"]["docker"] == "guest"
-  end
 end
 
 action :set do
@@ -49,7 +44,7 @@ action :set do
       newline << " #{new_resource.aliases.join(" ")}" if new_resource.aliases && !new_resource.aliases.empty?
       newline << " #{new_resource.hostname[/[^\.]*/]}"
       r = append_replacing_matching_lines("/etc/hosts", /^#{new_resource.ipaddress}\s+|\s+#{new_resource.hostname}\s+/, newline)
-      r.atomic_update false if docker_guest?
+      r.atomic_update false if docker?
       r.notifies :reload, "ohai[reload hostname]"
     end
 
@@ -75,7 +70,7 @@ action :set do
       end
     when node["os"] == "linux"
       case
-      when ::File.exist?("/usr/bin/hostnamectl") && !docker_guest?
+      when ::File.exist?("/usr/bin/hostnamectl") && !docker?
         # use hostnamectl whenever we find it on linux (as systemd takes over the world)
         # this must come before other methods like /etc/hostname and /etc/sysconfig/network
         execute "hostnamectl set-hostname #{new_resource.hostname}" do
@@ -89,7 +84,7 @@ action :set do
         # the "platform: nexus, platform_family: wrlinux, os: linux" platform also hits this
         # this is also fallback for any linux systemd host in a docker container (where /usr/bin/hostnamectl will fail)
         file "/etc/hostname" do
-          atomic_update false if docker_guest?
+          atomic_update false if docker?
           content "#{new_resource.hostname}\n"
           owner "root"
           group node["root_group"]

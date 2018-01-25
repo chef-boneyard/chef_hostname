@@ -38,7 +38,7 @@ Because of the way that this cookbook "Duck Types" the operating system, many sy
 
 ### Chef
 
-- Chef 12.7+
+- Chef 12.11+
 
 ### Cookbooks
 
