@@ -2,6 +2,14 @@
 
 This file is used to list changes made in each version of the chef_hostname cookbook.
 
+## 1.0.0 (2018-01-25)
+
+- Update kitchen config
+- Update hostname resource check for File check so that on SUSE systems doesn't fail.
+- Require Chef 12.11 and use the built in docker helper
+- Move all maintainer information to the readme
+- The test cookbook is named test not fake
+
 ## 0.6.0 (2017-05-30)
 
 - Added testing in Travis with Delivery local mode
