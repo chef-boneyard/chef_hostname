@@ -22,6 +22,23 @@ action_class do
       not_if { IO.read(path).split("\n").include?(string) }
     end
   end
+
+  # read in the xml file used by Ec2ConfigService and update the Ec2SetComputerName
+  # setting to disable updating the computer name so we don't revert our change on reboot
+  # @return [String]
+  def updated_ec2_config_xml
+    begin
+      require "nokogiri"
+      config_file = 'C:\Program Files\Amazon\Ec2ConfigService\Settings\config.xml'
+      config = ::Nokogiri::XML(::File.read(config_file))
+      # find an element named State with a sibling element whose value is Ec2SetComputerName
+      setting = config.at_xpath("//Plugin/State[../Name/text() = 'Ec2SetComputerName']")
+      setting.content = "Disabled"
+    rescue
+      return ""
+    end
+    config.to_s
+  end
 end
 
 action :set do
@@ -164,11 +181,15 @@ action :set do
   else # windows
 
     # suppress EC2 config service from setting our hostname
-    ec2_config_xml = 'C:\Program Files\Amazon\Ec2ConfigService\Settings\config.xml'
-    cookbook_file ec2_config_xml do
-      source "config.xml"
-      cookbook "chef_hostname"
-      only_if { ::File.exist? ec2_config_xml }
+    if ::File.exist?('C:\Program Files\Amazon\Ec2ConfigService\Settings\config.xml')
+      xml_contents = updated_ec2_config_xml
+      if xml_contents.empty?
+        Chef::Log.warn('Unable to properly parse and update C:\Program Files\Amazon\Ec2ConfigService\Settings\config.xml contents. Skipping file update.')
+      else
+        file 'C:\Program Files\Amazon\Ec2ConfigService\Settings\config.xml' do
+          content xml_contents
+        end
+      end
     end
 
     # update via netdom
