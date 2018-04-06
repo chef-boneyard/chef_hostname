@@ -2,6 +2,12 @@
 
 This file is used to list changes made in each version of the chef_hostname cookbook.
 
+## 1.0.1 (2018-04-06)
+
+- This cookbook has been deprecated as the hostname resource now ships in Chef 14. If you encounter issues with the resource please update to Chef 14 and file an issue against Chef if the problem continues.
+- Dynamically update the EC2 config file on windows
+- Remove Chefspec matchers as they're auto generated now
+
 ## 1.0.0 (2018-01-25)
 
 - Update kitchen config
