@@ -1,6 +1,6 @@
 # NOTE THIS COOKBOOK HAS BEEN MOVED TO CORE CHEF AS OF CHEF 14.0.190
 
-All new development will be in [core chef] (http://github.com/chef/chef).
+All new development will be in [core chef](https://github.com/chef/chef).
 
 # chef_hostname Cookbook
 
